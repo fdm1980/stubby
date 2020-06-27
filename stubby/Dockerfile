@@ -111,10 +111,6 @@ RUN set -e -x && \
 
 WORKDIR /opt/stubby
 
-EXPOSE 8053/udp
-
-USER stubby:stubby
-
-HEALTHCHECK --interval=5s --timeout=3s --start-period=5s CMD drill @127.0.0.1 -p 8053 cloudflare.com || exit 1
+EXPOSE 53/tcp 53/udp
 
 CMD ["/opt/stubby/bin/stubby", "-C", "/opt/stubby/etc/stubby/stubby.yml"]
