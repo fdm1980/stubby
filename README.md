@@ -33,7 +33,8 @@ Stubby performs DNS resolution over TLS. By default, this container is configure
   c.  Host Path:  /mnt/user/appdata/stubby/  
   d.  Access Mode:  Read/Write  
   
-Start the container to allow it to create the "/appdata/stubby/" folder.  Stop the containter.  
+Start the container to allow it to create the "/appdata/stubby/" folder.  
+Stop the containter.  
 Download/copy the "stubby.yml" file to the appdata folder.  https://github.com/fdm1980/stubby-docker/tree/master/stubby  
 Restart the container.
 
