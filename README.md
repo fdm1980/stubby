@@ -42,6 +42,9 @@ Restart the container.
 
 Point your DNS to the IP of the Stubby container.
 
+Open the console and type "stubby -V" to see the version.  
+https://github.com/getdnsapi/stubby/releases
+
 ## Acknowledgments
 
 Many thanks to the original creator.  See original acknowledgements.
@@ -51,7 +54,7 @@ Many thanks to the original creator.  See original acknowledgements.
 ## Licenses
 ### License
 
-Unless otherwise specified, all code is released under the MIT License (MIT). See the [repository's `LICENSE` file](https://github.com/fdm1980/stubby-docker/blob/fdm1980-unRAID/LICENSE) for details.
+Unless otherwise specified, all code is released under the MIT License (MIT). See the [repository's `LICENSE` file](https://github.com/fdm1980/stubby-docker/blob/fdm1980-unRAID/LICENSE) for details.  
 (originally from https://github.com/MatthewVance/stubby-docker)
 
 ### Licenses for other components
