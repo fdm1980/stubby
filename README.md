@@ -14,26 +14,26 @@ Stubby performs DNS resolution over TLS. By default, this container is configure
 ## How to use - unRAID template setup
 (assuming you use other DNS containers with "Network Type = Custom : br0" such as pihole or unbound)
 
-1)  Network Type = Custom : br0
-  a)  Set your own IP address
+1.  Network Type = Custom : br0  
+  a.  Set your own IP address
   
-2)  Port Mapping
-  a)  Name:  Host Port 1
-  b)  Host Port:  53
-  c)  Connection Type:  TCP
+2.  Port Mapping  
+  a.  Name:  Host Port 1  
+  b.  Host Port:  53  
+  c.  Connection Type:  TCP
 
-3)  Port Mapping
-  a)  Name:  Host Port 2
-  b)  Host Port:  53
-  c)  Connection Type:  UDP
+3.  Port Mapping  
+  a.  Name:  Host Port 2  
+  b.  Host Port:  53  
+  c.  Connection Type:  UDP  
 
-3)  Path / Volume Mapping
-  a)  Name:  Appdata
-  b)  Container Path:  /opt/stubby/etc/stubby/
-  c)  Host Path:  /mnt/user/appdata/stubby/
-  d)  Access Mode:  Read/Write
+4.  Path / Volume Mapping  
+  a.  Name:  Appdata  
+  b.  Container Path:  /opt/stubby/etc/stubby/  
+  c.  Host Path:  /mnt/user/appdata/stubby/  
+  d.  Access Mode:  Read/Write  
   
-Start the container to allow it to create the "/appdata/stubby/" folder.
+Start the container to allow it to create the "/appdata/stubby/" folder.  
 Stop the containter, download / copy the "stubby.yml" file to the appdata folder, restart the container.
 
 ### Standard usage
