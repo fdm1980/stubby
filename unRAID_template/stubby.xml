@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>stubby</Name>
+  <Repository>fdm80/stubby:latest</Repository>
+  <Registry>https://hub.docker.com/r/fdm80/stubby/</Registry>
+  <Network>br0</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/fdm1980/stubby</Project>
+  <Overview>Stubby is the name given to a mode of using getdns which enables it to act as a local DNS Privacy stub resolver (using DNS-over-TLS).&#xD;
+&#xD;
+The stubby.yml is configured to use Cloudflare DNS by default.&#xD;
+The stubby.yml can be edited to use different DNS servers.</Overview>
+  <Category>Network:DNS</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/fdm1980/stubby/stubby-unRAID/stubby.xml</TemplateURL>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams>--restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Stubby is the name given to a mode of using getdns which enables it to act as a local DNS Privacy stub resolver (using DNS-over-TLS)</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort/>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/stubby/</HostDir>
+      <ContainerDir>/opt/stubby/etc/stubby/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="" Default="53" Mode="tcp" Description="Container Port 53" Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="Host Port 2" Target="" Default="53" Mode="udp" Description="Container Port 53" Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="Appdata" Target="/opt/stubby/etc/stubby/" Default="/mnt/user/appdata/stubby/" Mode="rw" Description="Appdata location" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/stubby/</Config>
+</Container>
