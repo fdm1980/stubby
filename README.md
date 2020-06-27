@@ -9,13 +9,36 @@ According to the [Stubby documentation](https://dnsprivacy.org/wiki/display/DP/A
 >
 >However, Unbound is a more mature and stable daemon and may be more reliable today. 
 
-Stubby performs DNS resolution over TLS. By default, this is configured to use Cloudflare DNS. 
+Stubby performs DNS resolution over TLS. By default, this container is configured to use Cloudflare DNS. 
 
-## How to use
+## How to use - unRAID template setup
+(assuming you use other DNS containers with "Network Type = Custom : br0" such as pihole or unbound)
+
+1)  Network Type = Custom : br0
+  a)  Set your own IP address
+  
+2)  Port Mapping
+  a)  Name:  Host Port 1
+  b)  Host Port:  53
+  c)  Connection Type:  TCP
+
+3)  Port Mapping
+  a)  Name:  Host Port 2
+  b)  Host Port:  53
+  c)  Connection Type:  UDP
+
+3)  Path / Volume Mapping
+  a)  Name:  Appdata
+  b)  Container Path:  /opt/stubby/etc/stubby/
+  c)  Host Path:  /mnt/user/appdata/stubby/
+  d)  Access Mode:  Read/Write
+  
+Start the container to allow it to create the "/appdata/stubby/" folder.
+Stop the containter, download / copy the "stubby.yml" file to the appdata folder, restart the container.
 
 ### Standard usage
 
-Next, point your DNS to the IP of your Docker host running the Unbound container.
+Point your DNS to the IP of the Stubby container.
 
 ## Acknowledgments
 
