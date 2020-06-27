@@ -27,7 +27,7 @@ Stubby performs DNS resolution over TLS. By default, this container is configure
   b.  Host Port:  53  
   c.  Connection Type:  UDP  
 
-4.  Path / Volume Mapping  
+4.  Path/Volume Mapping  
   a.  Name:  Appdata  
   b.  Container Path:  /opt/stubby/etc/stubby/  
   c.  Host Path:  /mnt/user/appdata/stubby/  
