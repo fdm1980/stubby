@@ -15,7 +15,7 @@ The stubby.yml is configured to use Cloudflare DNS by default.&#xD;
 The stubby.yml can be edited to use different DNS servers.</Overview>
   <Category>Network:DNS</Category>
   <WebUI/>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/fdm1980/stubby/stubby-unRAID/stubby.xml</TemplateURL>
   <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
   <ExtraParams>--restart=always</ExtraParams>
   <PostArgs/>
