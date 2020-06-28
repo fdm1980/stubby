@@ -111,9 +111,7 @@ RUN set -e -x && \
 
 WORKDIR /opt/stubby
 
-#ports and volumes
 EXPOSE 53/tcp 53/udp
-VOLUME /opt/stubby/etc/stubby/
 
 HEALTHCHECK --interval=5s --timeout=3s --start-period=5s CMD drill @127.0.0.1 -p 53 cloudflare.com || exit 1
 
