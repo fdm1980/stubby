@@ -113,6 +113,6 @@ WORKDIR /opt/stubby
 
 EXPOSE 53/tcp 53/udp
 
-HEALTHCHECK --interval=5s --timeout=3s --start-period=5s CMD drill @127.0.0.1 -p 53 cloudflare.com || exit 1
+HEALTHCHECK --interval=4m --timeout=30s --start-period=10s --retries=2 CMD drill @127.0.0.1 -p 53 cloudflare.com || exit 1
 
 CMD ["/opt/stubby/bin/stubby", "-C", "/opt/stubby/etc/stubby/stubby.yml"]
