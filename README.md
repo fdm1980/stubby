@@ -35,7 +35,9 @@ Stubby performs DNS resolution over TLS. By default, this container is configure
   
 Start the container to allow it to create the "/appdata/stubby/" folder.  
 Stop the containter.  
-Download/copy the [stubby.yml](https://github.com/fdm1980/stubby/blob/master/stubby/stubby.yml) file to the appdata folder.  
+Download/copy the stubby.yml file to the appdata folder.  
+> [stubby.yml](https://github.com/fdm1980/stubby/blob/master/stubby/stubby.yml)  
+
 Restart the container.
 
 ### Standard usage
