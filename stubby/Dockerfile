@@ -1,7 +1,7 @@
 FROM debian:buster as openssl
 
-ENV VERSION_OPENSSL=openssl-1.1.1h \
-    SHA256_OPENSSL=5c9ca8774bd7b03e5784f26ae9e9e6d749c9da2438545077e6b3d755a06595d9 \
+ENV VERSION_OPENSSL=openssl-1.1.1i \
+    SHA256_OPENSSL=e8be6a35fe41d10603c3cc635e93289ed00bf34b79671a3a4de64fcee00d5242 \
     SOURCE_OPENSSL=https://www.openssl.org/source/ \
     OPGP_OPENSSL=8657ABB260F056B1E5190839D9C4D26D0E604491
 
@@ -28,11 +28,12 @@ RUN set -e -x && \
     gpg --batch --verify openssl.tar.gz.asc openssl.tar.gz && \
     tar xzf openssl.tar.gz && \
     cd "${VERSION_OPENSSL}" && \
+    /bin/sh -c 'if gcc -dM -E - </dev/null | grep -q __SIZEOF_INT128__; then export ECFLAG="enable-ec_nistp_64_gcc_128"; else export ECFLAG=""; fi' && \
     ./config \
         -Wl,-rpath=/opt/openssl/lib \
         --prefix=/opt/openssl \
         --openssldir=/opt/openssl \
-        enable-ec_nistp_64_gcc_128 \
+        $ECFLAG \
         -DOPENSSL_NO_HEARTBEATS \
         no-weak-ssl-ciphers \
         no-ssl2 \
